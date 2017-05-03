@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html dir="ltr" xml:lang="fr" class="yui3-js-enabled" id="yui_3_17_2_1_1491404048656_161" lang="fr"><head>
+    <title>Rapports statistiques</title>
+    <link rel="shortcut icon" href="http://localhost/moodle/theme/image.php/cleanudem/theme/1491328343/favicon">
+<link rel="apple-touch-icon" href="http://localhost/moodle/theme/image.php/cleanudem/theme/1491328343/icons/apple-touch-icon-57x57" sizes="57x57">
+<link rel="apple-touch-icon" href="http://localhost/moodle/theme/image.php/cleanudem/theme/1491328343/icons/apple-touch-icon-60x60" sizes="60x60">
+<link rel="apple-touch-icon" href="http://localhost/moodle/theme/image.php/cleanudem/theme/1491328343/icons/apple-touch-icon-72x72" sizes="72x72">
+<link rel="apple-touch-icon" href="http://localhost/moodle/theme/image.php/cleanudem/theme/1491328343/icons/apple-touch-icon-114x114" sizes="114x114">
+<link rel="apple-touch-icon" href="http://localhost/moodle/theme/image.php/cleanudem/theme/1491328343/icons/apple-touch-icon-120x120" sizes="120x120">
+<link rel="apple-touch-icon" href="http://localhost/moodle/theme/image.php/cleanudem/theme/1491328343/icons/apple-touch-icon-144x144" sizes="144x144">
+<link rel="apple-touch-icon" href="http://localhost/moodle/theme/image.php/cleanudem/theme/1491328343/icons/apple-touch-icon-152x152" sizes="152x152">
+<link rel="apple-touch-icon" href="http://localhost/moodle/theme/image.php/cleanudem/theme/1491328343/icons/apple-touch-icon-180x180" sizes="180x180">
+<link rel="mask-icon" href="http://localhost/moodle/theme/image.php/cleanudem/theme/1491328343/icons/safari-pinned-tab" color="#0e79d4">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="moodle, Eval paire - auto eval (Phase de notation de l'évaluation)">
+<link rel="stylesheet" type="text/css" href="src/yui_combo.css"><link charset="utf-8" rel="stylesheet" id="yui_3_17_2_1_1491404048656_24" href="src/yui_combo_002.css">
+
+<script id="firstthemesheet" type="text/css">/** Required in order to fix style inclusion problems in IE with YUI **/</script>
+<link rel="stylesheet" type="text/css" href="src/all.css">
+
+	<link href="src/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href="src/checkbox.css" rel="stylesheet" type="text/css">
+    <link href="src/css.css" rel="stylesheet" type="text/css">    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-title" content="StudiUM">
+<meta name="application-name" content="StudiUM">
+<meta name="msapplication-tooltip" content="StudiUM">
+<meta name="msapplication-TileColor" content="#0e79d4">
+<meta name="msapplication-navbutton-color" content="#0e79d4">
+<meta name="msapplication-config" content="none">
+<meta name="msapplication-TileImage" content="http://localhost/moodle/theme/image.php/cleanudem/theme/1491328343/icons/mstile-144x144">
+<meta name="msapplication-square70x70logo" content="http://localhost/moodle/theme/image.php/cleanudem/theme/1491328343/icons/mstile-70x70">
+<meta name="msapplication-square150x150logo" content="http://localhost/moodle/theme/image.php/cleanudem/theme/1491328343/icons/mstile-150x150">
+<meta name="msapplication-wide310x150logo" content="http://localhost/moodle/theme/image.php/cleanudem/theme/1491328343/icons/mstile-310x150">
+<meta name="msapplication-square310x310logo" content="http://localhost/moodle/theme/image.php/cleanudem/theme/1491328343/icons/mstile-310x310">
+
+
+<script type="text/javascript" src="src/jquery-3.2.0.min.js"></script>
+</head>
+
+<body id="page-mod-workshop-view" class="format-weeks  path-mod path-mod-workshop gecko dir-ltr lang-fr yui-skin-sam yui3-skin-sam localhost--moodle pagelayout-incourse course-27727 context-415531 cmid-77458 category-327 three-column side-regions-with-max-width has-region-side-pre used-region-side-pre has-region-side-post empty-region-side-post side-pre-only jsenabled">
+<div class="skiplinks">
+    <a href="#maincontent" class="skip">Passer au contenu principal</a>
+</div>
+<div id="yui3-css-stamp" style="position: absolute !important; visibility: hidden !important" class=""></div>
+
+<script type="text/javascript">
+//<![CDATA[
+document.body.className += ' jsenabled';
+//]]>
+</script>
+<style>
+.c4, .givengrade {
+	display:none;
+}
+a.grade {
+#float:right;
+}
+a.grade span.grade {
+	font-size: 16px;
+}
+span.user {
+#float:left;
+}
+.filterviewreport {
+	float:right;font-size:0.8em;
+}
+.filterviewreport input {
+margin-right:0px;
+}
+.radio label {
+    font-size: 14px;
+    font-weight: bold;
+}
+.flex-container {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    margin: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 75%;
+	margin-left:0px;
+	background-color: #FFF;
+}
+
+.flex-item {
+    font-size: 12px;
+    height: 14px;
+    margin: 0;
+    width: 100%;
+}
+.flex-item .note {
+	font-size: 16px;
+	font-weight: 700;
+}
+.flex-item a {
+float:right;
+cursor:pointer;
+}
+.flex-item span {
+float:left;
+}
+.c2, .c4 {
+    min-width: 20% !important;
+}
+
+.c0 {
+    width: 20%;
+}
+.userpicture.defaultuserpic.custom {
+    background-color: rgba(255, 255, 255, 0.98);
+    border-radius: 100%;
+    position: relative;
+    top: 5px;
+	float:left;
+}
+.box-fullname {
+	font-weight:bold;
+	color: #1375c7;
+}
+td.receivedgrade {
+	border-bottom:medium none !important;
+}
+td.receivedgrade:not(:nth-child(3)){
+	border-top:medium none !important;
+}
+.form-item .form-setting, .form-item .form-description, .mform .fitem .felement, #page-mod-forum-search .c1, .mform .fdescription.required, .userprofile dl.list dd, .form-horizontal .controls {
+margin-left: 60px !important;
+}
+.competencyreport .row {
+float:left;
+margin-right:20px;
+}
+.form-item .form-label, .mform .fitem div.fitemtitle, .userprofile dl.list dt, .form-horizontal .control-label {
+	width:10% !important;
+}
+.fitem .felement {
+	width:unset !important;
+}
+#userInfoContainer {
+	display:none;
+}
+/*----- Tabs -----*/
+.tabs {
+    width:100%;
+    display:inline-block;
+	padding-top:30px;
+}
+ 
+    /*----- Tab Links -----*/
+    /* Clearfix */
+	.tab-links {
+		margin:0;
+	}
+    .tab-links:after {
+        display:block;
+        clear:both;
+        content:'';
+    }
+ 
+    .tab-links li {
+        margin:0px 5px;
+        float:left;
+        list-style:none;
+    }
+ 
+        .tab-links a {
+            padding:9px 15px;
+            display:inline-block;
+            border-radius:3px 3px 0px 0px;
+            font-size:16px;
+            font-weight:600;
+            transition:all linear 0.15s;
+        }
+ 
+        .tab-links a:hover {
+            background:#1375c7;
+            text-decoration:none;
+			color:#fff;
+        }
+ 
+    li.active a, li.active a:hover {
+        background:#1375c7;
+        color:#fff;
+    }
+ 
+    /*----- Content of Tabs -----*/
+    .tab-content {
+        border: 1px solid #1375c7;
+		border-radius: 3px;
+		padding: 15px;
+    }
+ 
+        .tab {
+            display:none;
+        }
+ 
+        .tab.active {
+            display:block;
+        }
+</style>
+
+
+<header role="banner" class="navbar navbar-fixed-top navbar-inverse moodle-has-zindex default-device">
+    <nav role="navigation" class="navbar-inner">
+        <div class="container-fluid">
+            <div class="logobox white pull-left"><a title="Université de Montréal" target="_blank" class="logo_udem" href="http://www.umontreal.ca/"><img src="src/logo_udem_white.svg" alt="Logo of Université de Montréal"></a><span class="logo_separator"></span><a title="StudiUM" target="" class="logo_studium" href="http://localhost/moodle"><img src="src/logo_studium_white.svg" alt="Logo of StudiUM"></a></div>            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></a>            <div class="usermenu"><ul class="nav"><li class="dropdown usermenu"><a href="#" target="" class="dropdown-toggle" data-toggle="" title="Issam Taboubi"><span class="fullnameusertext">Issam Taboubi</span><img src="src/7ad34c68ef3bd1f49dead0baf856a119_002.png" alt="Avatar Issam Taboubi" title="Avatar Issam Taboubi" class="userpicture defaultuserpic" height="30" width="30"><b class="caret"></b></a><ul class="dropdown-menu"><li><a title="Mon StudiUM" target="" class="" href="http://localhost/moodle/my/index.php">Mon StudiUM</a></li><li class="divider"></li><li><a title="Profil" target="" class="" href="http://localhost/moodle/user/profile.php">Profil</a></li><li><a title="Messages des forums" target="" class="" href="http://localhost/moodle/mod/forum/user.php">Messages des forums</a></li><li><a title="Messages personnels" target="" class="" href="http://localhost/moodle/message/index.php">Messages personnels</a></li><li><a title="Fichiers personnels" target="" class="" href="http://localhost/moodle/user/files.php">Fichiers personnels</a></li><li><a title="Préférences" target="" class="" href="http://localhost/moodle/user/preferences.php">Préférences</a></li><li class="divider"></li><li><a title="Prendre le rôle..." target="" class="" href="http://localhost/moodle/course/switchrole.php?id=27727&amp;switchrole=-1&amp;returnurl=%2Fmod%2Fworkshop%2Fview.php%3Fid%3D77458">Prendre le rôle...</a></li><li class="divider"></li><li><a title="Déconnexion" target="" class="" href="http://localhost/moodle/login/logout.php?sesskey=42mMi0rz4B">Déconnexion</a></li></ul></li></ul></div>            <div class="popover-region collapsed popover-region-messages" id="nav-message-popover-container" data-userid="128601" data-region="popover-region">
+    <div class="popover-region-toggle nav-link" data-region="popover-region-toggle" aria-role="button" aria-controls="popover-region-container-58e5050fd6b6458e5050fc520171" aria-haspopup="true" aria-label="Afficher la fenêtre des messages sans nouveau message" tabindex="0">
+                <img class="smallicon" alt=" Ouvrir/fermer le menu messages " title=" Ouvrir/fermer le menu messages " src="src/message.svg">
+        <div class="count-container hidden" data-region="count-container"></div>
+
+    </div>
+    <div id="popover-region-container-58e5050fd6b6458e5050fc520171" class="popover-region-container" data-region="popover-region-container" aria-expanded="false" aria-hidden="true" aria-label="Fenêtre de notification" role="region">
+        <div class="popover-region-header-container">
+            <h3 class="popover-region-header-text" data-region="popover-region-header-text">Messages personnels</h3>
+            <div class="popover-region-header-actions" data-region="popover-region-header-actions">        <div class="newmessage-link">
+                <a href="http://localhost/moodle/message/index.php?contactsfirst=1">Nouveau message
+                </a>
+        </div>
+        <div class="hover-tooltip-container">
+                    <a class="mark-all-read-button" href="#" role="button" title="Tout marquer comme lu" data-action="mark-all-read">
+                    <span class="normal-icon"><img class="smallicon" alt=" Tout marquer comme lu " title=" Tout marquer comme lu " src="src/markasread.svg"></span>
+                    <span class="loading-icon"><img class="smallicon" alt=" Chargement " title=" Chargement " src="src/loading.gif"></span>
+                </a>
+
+    <div class="hover-tooltip">
+        Tout marquer comme lu
+    </div>
+</div>
+        <div class="hover-tooltip-container">
+                    <a href="http://localhost/moodle/message/edit.php?id=128601" title="Préférences des messages">
+                    <img class="smallicon" alt=" Préférences des messages " title=" Préférences des messages " src="src/settings.svg">
+                </a>
+
+    <div class="hover-tooltip">
+        Préférences des messages
+    </div>
+</div>
+</div>
+        </div>
+        <div class="popover-region-content-container" data-region="popover-region-content-container">
+            <div class="popover-region-content" data-region="popover-region-content">
+                        <div class="messages" data-region="messages" role="log" aria-busy="false" aria-atomic="false" aria-relevant="additions"></div>
+        <div class="empty-message" data-region="empty-message" tabindex="0">Aucun message</div>
+
+            </div>
+            <span class="loading-icon"><img class="smallicon" alt=" Chargement " title=" Chargement " src="src/loading.gif"></span>
+        </div>
+                <a class="see-all-link" href="http://localhost/moodle/message/index.php">
+                    <div class="popover-region-footer-container">
+                        <div class="popover-region-seeall-text">Tout afficher</div>
+                    </div>
+                </a>
+    </div>
+</div><div class="popover-region collapsed popover-region-notifications" id="nav-notification-popover-container" data-userid="128601" data-region="popover-region">
+    <div class="popover-region-toggle nav-link" data-region="popover-region-toggle" aria-role="button" aria-controls="popover-region-container-58e5050fd7e5058e5050fc520172" aria-haspopup="true" aria-label="Afficher la fenêtre des notifications sans nouvelle notification" tabindex="0">
+                <img class="smallicon" alt=" Ouvrir/fermer le menu notifications " title=" Ouvrir/fermer le menu notifications " src="src/notifications.svg">
+        <div class="count-container hidden" data-region="count-container"></div>
+
+    </div>
+    <div id="popover-region-container-58e5050fd7e5058e5050fc520172" class="popover-region-container" data-region="popover-region-container" aria-expanded="false" aria-hidden="true" aria-label="Fenêtre de notification" role="region">
+        <div class="popover-region-header-container">
+            <h3 class="popover-region-header-text" data-region="popover-region-header-text">Notifications</h3>
+            <div class="popover-region-header-actions" data-region="popover-region-header-actions">        <div class="hover-tooltip-container">
+                    <a class="mark-all-read-button" href="#" title="Tout marquer comme lu" data-action="mark-all-read" role="button">
+                    <span class="normal-icon"><img class="smallicon" alt=" Tout marquer comme lu " title=" Tout marquer comme lu " src="src/markasread.svg"></span>
+                    <span class="loading-icon"><img class="smallicon" alt=" Chargement " title=" Chargement " src="src/loading.gif"></span>
+                </a>
+
+    <div class="hover-tooltip">
+        Tout marquer comme lu
+    </div>
+</div>
+        <div class="hover-tooltip-container">
+                    <a href="http://localhost/moodle/message/notificationpreferences.php?userid=128601" title="Préférences de notification">
+                    <img class="smallicon" alt=" Préférences de notification " title=" Préférences de notification " src="src/settings.svg">
+                </a>
+
+    <div class="hover-tooltip">
+        Préférences de notification
+    </div>
+</div>
+</div>
+        </div>
+        <div class="popover-region-content-container" data-region="popover-region-content-container">
+            <div class="popover-region-content" data-region="popover-region-content">
+                        <div class="all-notifications" data-region="all-notifications" role="log" aria-busy="false" aria-atomic="false" aria-relevant="additions"></div>
+        <div class="empty-message" tabindex="0" data-region="empty-message">Vous n'avez pas de notification</div>
+
+            </div>
+            <span class="loading-icon"><img class="smallicon" alt=" Chargement " title=" Chargement " src="src/loading.gif"></span>
+        </div>
+                <a class="see-all-link" href="http://localhost/moodle/message/output/popup/notifications.php">
+                    <div class="popover-region-footer-container">
+                        <div class="popover-region-seeall-text">Tout afficher</div>
+                    </div>
+                </a>
+    </div>
+</div>                        <div class="nav-collapse collapse pull-right">
+                <ul class="nav"><li><a title="Accueil" target="" class="" href="http://localhost/moodle/?redirect=0">Accueil</a></li><li class="dropdown"><a href="http://localhost/moodle/my/index.php" target="" class="dropdown-toggle" data-toggle="" title="Mes cours"><span class="fullnameusertext">Mes cours</span><b class="caret"></b></a><ul class="dropdown-menu"><li><a title="Cours archive" target="" class="" href="http://localhost/moodle/course/view.php?id=27721">cours-archive</a></li><li><a title="Cours atelier" target="" class="" href="http://localhost/moodle/course/view.php?id=27727">cours-atelier</a></li><li><a title="Cours Notif" target="" class="" href="http://localhost/moodle/course/view.php?id=27722">cours-notif</a></li></ul></li><li><a title="Liste des cours" target="" class="" href="http://localhost/moodle/course">Liste des cours</a></li><li class="dropdown"><a href="http://localhost/moodle/course/view.php?id=11" target="" class="dropdown-toggle" data-toggle="" title="Aide"><span class="fullnameusertext">Aide</span><b class="caret"></b></a><ul class="dropdown-menu"><li><a title="À propos" target="_blank" class="" href="https://wiki.umontreal.ca/x/HIKIBQ">À propos de StudiUM</a></li><li><a title="Support et documentation" target="_blank" class="" href="https://wiki.umontreal.ca/display/StudiUMDocs">Soutien et documentation</a></li><li><a title="Informations sur le navigateur" target="_blank" class="" href="http://sse.umontreal.ca/navigateur/index.html">Informations sur le navigateur</a></li><li><a title="Consulter des exemples de cours" target="" class="" href="http://localhost/moodle/mod/page/view.php?id=30870">Consulter des exemples de cours</a></li><li><a title="Espace enseignants" target="" class="" href="http://localhost/moodle/mod/forum/view.php?id=249">Espace enseignants</a></li><li><a title="Soutien technique étudiants" target="" class="" href="http://localhost/moodle/mod/forum/view.php?id=250">Soutien technique étudiants</a></li><li><a title="Demander un site de cours" target="" class="" href="http://localhost/moodle/course/index.php?categoryid=1">Demander un site de cours</a></li></ul></li><li class="dropdown langmenu"><a href="" target="" class="dropdown-toggle" data-toggle="" title="Langue"><span class="fullnameusertext">Français ‎(fr)‎</span><b class="caret"></b></a><ul class="dropdown-menu"><li><a title="English ‎(en)‎" target="" class="" href="http://localhost/moodle/mod/workshop/view.php?id=77458&amp;lang=en">English ‎(en)‎</a></li><li><a title="Français ‎(fr)‎" target="" class="" href="http://localhost/moodle/mod/workshop/view.php?id=77458&amp;lang=fr">Français ‎(fr)‎</a></li></ul></li></ul>                <a title="Élargir le contenu principal" class="navbar-text fullscreen-toggle-btn" href="http://localhost/moodle/mod/workshop/view.php?id=77458&amp;fullscreenmodestate=true"><span class="fa fa-compress"></span><span class="fa fa-expand"></span></a>                            </div>
+        </div>
+    </nav>
+</header>
+
+<div id="page" class="container-fluid">
+
+    
+<header id="page-header" class="clearfix">
+    <div id="page-navbar" class="clearfix">
+        <nav class="breadcrumb-nav"><span class="accesshide" id="navbar-label">Chemin de la page</span><nav aria-labelledby="navbar-label"><ul class="breadcrumb"><li><span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a itemprop="url" href="http://localhost/moodle/"><span itemprop="title">Accueil</span></a></span> <span class="divider"> <span class="accesshide "><span class="arrow_text">/</span>&nbsp;</span><span class="arrow sep">►</span> </span></li><li><span tabindex="0">Mes cours</span> <span class="divider"> <span class="accesshide "><span class="arrow_text">/</span>&nbsp;</span><span class="arrow sep">►</span> </span></li><li><span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a itemprop="url" title="Cours atelier" href="http://localhost/moodle/course/view.php?id=27727"><span itemprop="title">cours-atelier</span></a></span> <span class="divider"> <span class="accesshide "><span class="arrow_text">/</span>&nbsp;</span><span class="arrow sep">►</span> </span></li><li><span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a itemprop="url" href="http://localhost/moodle/course/view.php?id=27727#section-0"><span itemprop="title">Rapports statistiques</span></a></span> </li><li></li></ul></nav></nav>
+        <div class="breadcrumb-button"></div>
+    </div>
+    <div class="page-context-header"><div class="page-header-headings"><h1>Rapports statistiques</h1></div></div>    <div id="course-header">
+            </div>
+</header>
+
+    <div id="page-content" class="row-fluid"> 
+        <div id="region-main-box" class="span9">
+            <div class="row-fluid" id="yui_3_17_2_1_1491404048656_160">
+            <section id="region-main" style="width:100%"class="span9 pull-right">
+            <span class="notifications" id="user-notifications"></span><div role="main" id="yui_3_17_2_1_1493747994585_126"><span id="maincontent"></span><div class="competencyreport" id="yui_3_17_2_1_1493747994585_125">
+    <div class="main_container" id="yui_3_17_2_1_1493747994585_124">
+        <!-- filter -->
+        <form class="mform" id="reportFilter" accept-charset="utf-8" method="post" autocomplete="off">
+            <fieldset id="id_displayinfo" class="clearfix collapsible">
+                <legend class="ftoggler" id="yui_3_17_2_1_1493747994585_137">
+                    <a role="button" title="Cliquer pour déplier ou replier" href="#" class="fheader" aria-controls="id_displayinfo" aria-expanded="true">Filtre</a>
+                </legend>
+                <div class="fcontainer clearfix" id="yui_3_17_2_1_1493747994585_123">
+                    <div class="templatefilter" id="yui_3_17_2_1_1493747994585_122">
+                        <div class="fitem for-autocomplete form-group row" id="yui_3_17_2_1_1493747994585_128">
+                            <div class="fitemtitle col-md-3">
+                                <label class="col-form-label d-inline" for="form_autocomplete_input-1493747995019">Cours</label>
+                            </div>
+                            <div class="felement fautocomplete col-md-9 form-inline  " id="yui_3_17_2_1_1493747994585_127">
+                            <input id="coursselected" type="hidden" />
+							<div class="form-autocomplete-selection " id="cours_selection" role="list" aria-atomic="true">
+<span class="accesshide">Éléments sélectionnés</span>
+        <span class="no-selection">Aucun cours sélectionné</span>
+</div>
+
+<input type="text" id="form_autocomplete_input-1493747995019" list="form_autocomplete_suggestions-1493747995019" placeholder="Choisir un cours" role="combobox" aria-expanded="false" autocomplete="off" autocorrect="off" autocapitalize="off" aria-autocomplete="list" aria-owns="form_autocomplete_suggestions-1493747995019 form_autocomplete_selection-1493747995019" aria-activedescendant="form_autocomplete_selection-1493747995019"><span class="form-autocomplete-downarrow" id="arrow_cours">▼</span>
+<ul class="form-autocomplete-suggestions" id="list_cours" role="listbox" aria-hidden="true" style="display: none;">
+        <li role="option" data-value="1" aria-hidden="false" aria-selected="true" id="form_autocomplete_suggestions-1493747995019-0"><span class="userplan-fullname">
+
+    <span>Cours 1</span>
+    <span><small>cours-1</small></span>
+</span></li>
+        <li role="option" data-value="2" aria-hidden="false" aria-selected="false" id=""><span class="userplan-fullname">
+
+    <span>Cours 2</span>
+    <span><small>cours-2</small></span>
+</span></li>
+        <li role="option" data-value="3" aria-hidden="false" aria-selected="false" id=""><span class="userplan-fullname">
+
+    <span>Cours 3</span>
+    <span><small>cours-3</small></span>
+</span></li>
+</ul>
+                            </div>
+                        </div>
+                        <div class="fitem for-autocomplete form-group row" id="yui_3_17_2_1_1493747994585_128">
+                            <div class="fitemtitle col-md-3">
+                                <label class="col-form-label d-inline" for="form_autocomplete_input-1493747995019">Étudiant</label>
+                            </div>
+                            <div class="felement fautocomplete col-md-9 form-inline  " id="yui_3_17_2_1_1493747994585_127">
+                            <input id="userselected" type="hidden" />
+							<div class="form-autocomplete-selection " id="user_selection" role="list" aria-atomic="true">
+<span class="accesshide">Éléments sélectionnés</span>
+        <span class="no-selection">Aucun étudiant sélectionné</span>
+		
+</div>
+
+<input type="text" id="form_autocomplete_input-1493747995019" list="form_autocomplete_suggestions-1493747995019" placeholder="Choisir un étudiant" role="combobox" aria-expanded="false" autocomplete="off" autocorrect="off" autocapitalize="off" aria-autocomplete="list" aria-owns="form_autocomplete_suggestions-1493747995019 form_autocomplete_selection-1493747995019" aria-activedescendant="form_autocomplete_selection-1493747995019"><span class="form-autocomplete-downarrow" id="arrow_users">▼</span>
+<ul class="form-autocomplete-suggestions" id="list_users" role="listbox" aria-hidden="true" style="display: none;">
+        <li role="option" data-value="1" aria-hidden="false" aria-selected="true" id="form_autocomplete_suggestions-1493747995019-0"><span class="userplan-fullname">
+    <img height="18" src="http://www.gravatar.com/avatar/00000000000000000000000000000000?s=35" alt="" role="presentation">
+    <span>User2 Test2</span>
+    <span><small>user2test2</small></span>
+</span></li>
+        <li role="option" data-value="2" aria-hidden="false" aria-selected="false" id=""><span class="userplan-fullname">
+    <img height="18" src="http://www.gravatar.com/avatar/9e05c3b877bf078bbfc01ca4c46a906f?s=35&amp;d=mm" alt="" role="presentation">
+    <span>Issam Taboubi</span>
+    <span><small>taboubii</small></span>
+</span></li>
+        <li role="option" data-value="3" aria-hidden="false" aria-selected="false" id=""><span class="userplan-fullname">
+    <img height="18" src="http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=35&amp;d=mm" alt="" role="presentation">
+    <span>User1 Test1</span>
+    <span><small>user1test1</small></span>
+</span></li>
+</ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="fitem form-group row" id="yui_3_17_2_1_1493747994585_141">
+                            <div class="fitemtitle col-md-3"></div>
+                            <div class="felement col-md-9" id="yui_3_17_2_1_1493747994585_146">
+                                <button id="submitFilterReportButton" type="submit" class="btn btn-primary" disabled>
+                                    Appliquer
+                                    <i class="fa fa-refresh fa-spin"></i>
+                                </button>
+                            </div>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+
+        <!-- User navigation -->
+        <div id="userInfoContainer"><header class="widget_profile_box">
+    <div class="plan-name">
+        <h3 class="truncate">
+            <a href="#" title="Cours" target="_blank" class="infocoursselected">
+                Gabarit plan d'études 1
+            </a>
+        </h3>
+    </div>
+    <div class="currentplan" id="plan-user-info">
+        <i id="spinerprofile" class="fa fa-refresh fa-spin fa-4x"></i>
+        <div class="img-wrapper">
+            <img alt="Description de l'image: Issam Taboubi" src="http://www.gravatar.com/avatar/9e05c3b877bf078bbfc01ca4c46a906f?s=100&amp;d=mm" class="img-circle profile_img">
+        </div>
+        <div class="user-name">
+            <h3 class="truncate">
+                <a title="Issam Taboubi" class="infouser" href="http://localhost/moodle/user/profile.php?id=3887" target="_blank">Issam Taboubi</a>
+            </h3>
+        </div>
+    </div>
+    <a role="button" title="étudiant précédent: User2 Test2-4" class="navigatetoplan prevplan" data-userid="0" data-templateid="1" href="#">
+        <span class="user-profile-small">
+            <img alt="Description de l'image: User2 Test2" src="http://www.gravatar.com/avatar/00000000000000000000000000000000?s=35">
+            <p>User2 Test2</p>
+        </span>
+        <i class="fa fa-chevron-left fa-2x"></i>
+    </a>
+    <a role="button" title="étudiant suivant: User1 Test1-5" class="navigatetoplan nexplan" data-userid="5" data-templateid="1" href="#">
+        <span class="user-profile-small">
+            <img alt="Description de l'image: User1 Test1" src="http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=35&amp;d=mm">
+            <p>User1 Test1</p>
+        </span>
+        <i class="fa fa-chevron-right fa-2x"></i>
+    </a>
+</header>
+
+<!-- tabs -->
+<div class="tabs">
+    <ul class="tab-links">
+        <li class="active"><a href="#tab1">Rapport résumé</a></li>
+        <li><a href="#tab2">Rapport complet</a></li>
+        <li><a href="#tab3">Statistiques</a></li>
+        <li><a href="#tab4">Hits distribution</a></li>
+    </ul>
+ 
+    <div class="tab-content">
+        <div id="tab1" class="tab active">
+            <div class="section"><h2>Message</h2><div class="content"><table cellpadding="4" cellspacing="0"><tbody><tr><td valign="top"><img src="https://studium.umontreal.ca/theme/image.php/cleanudem/forum/1493288552/icon" class="icon" alt="Forum"></td><td valign="top" style="width:300">   <a title="Forum" href="/forum/view.php?id=1429771">Nouvelles</a></td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top"><p style="text-align:center">-</p></td><td>&nbsp;&nbsp;&nbsp;</td></tr><tr><td valign="top"><img src="https://studium.umontreal.ca/theme/image.php/cleanudem/resource/1493288552/icon" class="icon" alt="Fichier"></td><td valign="top" style="width:300">   <a title="Fichier" href="/resource/view.php?id=1429772">Plan de cours</a></td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top">10 vues</td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top" style="white-space: nowrap">lundi 13 mars 2017, 11:19 (50 jours 23 heures)</td></tr><tr><td valign="top"><img src="https://studium.umontreal.ca/theme/image.php/cleanudem/resource/1493288552/icon" class="icon" alt="Fichier"></td><td valign="top" style="width:300">   <a title="Fichier" href="/resource/view.php?id=1429773">Référentiel </a></td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top">1 vues</td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top" style="white-space: nowrap">lundi 23 janvier 2017, 11:12 (99 jours 22 heures)</td></tr><tr><td valign="top"><img src="https://studium.umontreal.ca/theme/image.php/cleanudem/label/1493288552/icon" class="icon" alt="Étiquette"></td><td valign="top" style="width:300">   <a title="Étiquette" href="/label/view.php?id=1429774">Espace de télécollaboration</a></td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top"><p style="text-align:center">-</p></td><td>&nbsp;&nbsp;&nbsp;</td></tr><tr><td valign="top"><img src="https://studium.umontreal.ca/theme/image.php/cleanudem/forum/1493288552/icon" class="icon" alt="Forum"></td><td valign="top" style="width:300">   <a title="Forum" href="/forum/view.php?id=1429775">Forum du cours</a></td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top"><p style="text-align:center">-</p></td><td>&nbsp;&nbsp;&nbsp;</td></tr><tr><td valign="top"><img src="https://studium.umontreal.ca/theme/image.php/cleanudem/forum/1493288552/icon" class="icon" alt="Forum"></td><td valign="top" style="width:300">   <a title="Forum" href="/forum/view.php?id=1429777">Offres d'emploi</a></td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top"><p style="text-align:center">-</p></td><td>&nbsp;&nbsp;&nbsp;</td></tr><tr><td valign="top"><img src="https://studium.umontreal.ca/theme/image.php/cleanudem/chat/1493288552/icon" class="icon" alt="Chat"></td><td valign="top" style="width:300">   <a title="Chat" href="/chat/view.php?id=1429778">Salle de clavardage </a></td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top"><p style="text-align:center">-</p></td><td>&nbsp;&nbsp;&nbsp;</td></tr><tr><td valign="top"><img src="https://studium.umontreal.ca/theme/image.php/cleanudem/chat/1493288552/icon" class="icon" alt="Chat"></td><td valign="top" style="width:300">   <a title="Chat" href="/chat/view.php?id=1429779">Salle de clavardage </a></td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top"><p style="text-align:center">-</p></td><td>&nbsp;&nbsp;&nbsp;</td></tr></tbody></table></div></div><div class="section"><h2>16 janvier - 22 janvier</h2><div class="content"><table cellpadding="4" cellspacing="0"><tbody><tr><td valign="top"><img src="https://studium.umontreal.ca/theme/image.php/cleanudem/label/1493288552/icon" class="icon" alt="Étiquette"></td><td valign="top" style="width:300">   <a title="Étiquette" href="/label/view.php?id=1429780">Tutoriel à suivre cette semaine
+</a></td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top"><p style="text-align:center">-</p></td><td>&nbsp;&nbsp;&nbsp;</td></tr><tr><td valign="top"><img src="https://studium.umontreal.ca/theme/image.php/cleanudem/url/1493288552/icon" class="icon" alt="URL"></td><td valign="top" style="width:300">   <a title="URL" href="/url/view.php?id=1429781">Tutoriel CMap Tools</a></td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top"><p style="text-align:center">-</p></td><td>&nbsp;&nbsp;&nbsp;</td></tr><tr><td valign="top"><img src="https://studium.umontreal.ca/theme/image.php/cleanudem/url/1493288552/icon" class="icon" alt="URL"></td><td valign="top" style="width:300">   <a title="URL" href="/url/view.php?id=1429782">Tutoriel CMap Tools en français</a></td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top"><p style="text-align:center">-</p></td><td>&nbsp;&nbsp;&nbsp;</td></tr><tr><td valign="top"><img src="https://studium.umontreal.ca/theme/image.php/cleanudem/url/1493288552/icon" class="icon" alt="URL"></td><td valign="top" style="width:300">   <a title="URL" href="/url/view.php?id=1429783">Pédagogie et réseaux de concepts</a></td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top"><p style="text-align:center">-</p></td><td>&nbsp;&nbsp;&nbsp;</td></tr><tr><td valign="top"><img src="https://studium.umontreal.ca/theme/image.php/cleanudem/label/1493288552/icon" class="icon" alt="Étiquette"></td><td valign="top" style="width:300">   <a title="Étiquette" href="/label/view.php?id=1429784">Ressources utilisées en classe
+</a></td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top"><p style="text-align:center">-</p></td><td>&nbsp;&nbsp;&nbsp;</td></tr><tr><td valign="top"><img src="https://studium.umontreal.ca/theme/image.php/cleanudem/url/1493288552/icon" class="icon" alt="URL"></td><td valign="top" style="width:300">   <a title="URL" href="/url/view.php?id=1429785">Petite introduction au cours</a></td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top"><p style="text-align:center">-</p></td><td>&nbsp;&nbsp;&nbsp;</td></tr><tr><td valign="top"><img src="https://studium.umontreal.ca/theme/image.php/cleanudem/resource/1493288552/icon" class="icon" alt="Fichier"></td><td valign="top" style="width:300">   <a title="Fichier" href="/resource/view.php?id=1429787">Diapos de la semaine 1 : Lexique, ENA</a></td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top"><p style="text-align:center">-</p></td><td>&nbsp;&nbsp;&nbsp;</td></tr></tbody></table></div></div><div class="section"><h2>23 janvier - 29 janvier</h2><div class="content"><table cellpadding="4" cellspacing="0"><tbody><tr><td valign="top"><img src="https://studium.umontreal.ca/theme/image.php/cleanudem/label/1493288552/icon" class="icon" alt="Étiquette"></td><td valign="top" style="width:300">   <a title="Étiquette" href="/label/view.php?id=1429789">Tutoriels à suivre cette semaine</a></td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top"><p style="text-align:center">-</p></td><td>&nbsp;&nbsp;&nbsp;</td></tr><tr><td valign="top"><img src="https://studium.umontreal.ca/theme/image.php/cleanudem/url/1493288552/icon" class="icon" alt="URL"></td><td valign="top" style="width:300">   <a title="URL" href="/url/view.php?id=1429791">Intro et tutoriel: le wiki</a></td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top"><p style="text-align:center">-</p></td><td>&nbsp;&nbsp;&nbsp;</td></tr><tr><td valign="top"><img src="https://studium.umontreal.ca/theme/image.php/cleanudem/label/1493288552/icon" class="icon" alt="Étiquette"></td><td valign="top" style="width:300">   <a title="Étiquette" href="/label/view.php?id=1429792">Ressources utilisées en classe
+</a></td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top"><p style="text-align:center">-</p></td><td>&nbsp;&nbsp;&nbsp;</td></tr><tr><td valign="top"><img src="https://studium.umontreal.ca/theme/image.php/cleanudem/url/1493288552/icon" class="icon" alt="URL"></td><td valign="top" style="width:300">   <a title="URL" href="/url/view.php?id=1429794">Témoignage sur l'utilisation d'un forum</a></td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top"><p style="text-align:center">-</p></td><td>&nbsp;&nbsp;&nbsp;</td></tr><tr><td valign="top"><img src="https://studium.umontreal.ca/theme/image.php/cleanudem/resource/1493288552/icon" class="icon" alt="Fichier"></td><td valign="top" style="width:300">   <a title="Fichier" href="/resource/view.php?id=1429795">Diapositives de la formation à la recherche documentaire en biblio</a></td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top"><p style="text-align:center">-</p></td><td>&nbsp;&nbsp;&nbsp;</td></tr><tr><td valign="top"><img src="https://studium.umontreal.ca/theme/image.php/cleanudem/page/1493288552/icon" class="icon" alt="Page"></td><td valign="top" style="width:300">   <a title="Page" href="/page/view.php?id=1429796">Ressources complémentaires: recherche documentaire</a></td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top">1 vues</td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top" style="white-space: nowrap">lundi 20 février 2017, 15:10 (71 jours 18 heures)</td></tr><tr><td valign="top"><img src="https://studium.umontreal.ca/theme/image.php/cleanudem/forum/1493288552/icon" class="icon" alt="Forum"></td><td valign="top" style="width:300">   <a title="Forum" href="/forum/view.php?id=1480930">Présentation de mon réseau de concept sur le texte de Serres</a></td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top">1 messages</td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top" style="white-space: nowrap">lundi 23 janvier 2017, 23:22 (99 jours 10 heures)</td></tr></tbody></table></div></div><div class="section"><h2>30 janvier - 5 février</h2><div class="content"><table cellpadding="4" cellspacing="0"><tbody><tr><td valign="top"><img src="https://studium.umontreal.ca/theme/image.php/cleanudem/resource/1493288552/icon" class="icon" alt="Fichier"></td><td valign="top" style="width:300">   <a title="Fichier" href="/resource/view.php?id=1429798">Directives du tp 1 : activité pour préparer le séminaire</a></td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top">1 vues</td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top" style="white-space: nowrap">lundi 30 janvier 2017, 14:58 (92 jours 19 heures)</td></tr><tr><td valign="top"><img src="https://studium.umontreal.ca/theme/image.php/cleanudem/resource/1493288552/icon" class="icon" alt="Fichier"></td><td valign="top" style="width:300">   <a title="Fichier" href="/resource/view.php?id=1429799">Diapos : Théories en éducation / Forum de discussion</a></td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top"><p style="text-align:center">-</p></td><td>&nbsp;&nbsp;&nbsp;</td></tr><tr><td valign="top"><img src="https://studium.umontreal.ca/theme/image.php/cleanudem/resource/1493288552/icon" class="icon" alt="Fichier"></td><td valign="top" style="width:300">   <a title="Fichier" href="/resource/view.php?id=1429800">Grille d'auto-évaluation de sa contribution au travail en équipe</a></td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top">1 vues</td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top" style="white-space: nowrap">lundi 20 février 2017, 12:13 (71 jours 21 heures)</td></tr><tr><td valign="top"><img src="https://studium.umontreal.ca/theme/image.php/cleanudem/label/1493288552/icon" class="icon" alt="Étiquette"></td><td valign="top" style="width:300">   <a title="Étiquette" href="/label/view.php?id=1429801">&nbsp;
+
+Le Wiki</a></td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top"><p style="text-align:center">-</p></td><td>&nbsp;&nbsp;&nbsp;</td></tr><tr><td valign="top"><img src="https://studium.umontreal.ca/theme/image.php/cleanudem/resource/1493288552/icon" class="icon" alt="Fichier"></td><td valign="top" style="width:300">   <a title="Fichier" href="/resource/view.php?id=1429802">Petit tutoriel sur l'utilisation du wiki dans Studium</a></td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top"><p style="text-align:center">-</p></td><td>&nbsp;&nbsp;&nbsp;</td></tr><tr><td valign="top"><img src="https://studium.umontreal.ca/theme/image.php/cleanudem/wiki/1493288552/icon" class="icon" alt="Wiki"></td><td valign="top" style="width:300">   <a title="Wiki" href="/wiki/view.php?id=1429803">Wiki test du prof</a></td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top">1 vues</td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top" style="white-space: nowrap">lundi 6 février 2017, 14:06 (85 jours 20 heures)</td></tr><tr><td valign="top"><img src="https://studium.umontreal.ca/theme/image.php/cleanudem/wiki/1493288552/icon" class="icon" alt="Wiki"></td><td valign="top" style="width:300">   <a title="Wiki" href="/wiki/view.php?id=1429804">Wiki des étudiants pour expérimenter</a></td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top"><p style="text-align:center">-</p></td><td>&nbsp;&nbsp;&nbsp;</td></tr><tr><td valign="top"><img src="https://studium.umontreal.ca/theme/image.php/cleanudem/wiki/1493288552/icon" class="icon" alt="Wiki"></td><td valign="top" style="width:300">   <a title="Wiki" href="/wiki/view.php?id=1429805">Enseignement programmé vs travail en équipe</a></td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top">15 vues</td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top" style="white-space: nowrap">lundi 13 février 2017, 16:37 (78 jours 17 heures)</td></tr><tr><td valign="top"><img src="https://studium.umontreal.ca/theme/image.php/cleanudem/wiki/1493288552/icon" class="icon" alt="Wiki"></td><td valign="top" style="width:300">   <a title="Wiki" href="/wiki/view.php?id=1429806">Enseignement modulaire vs simulation</a></td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top">26 vues</td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top" style="white-space: nowrap">jeudi 16 février 2017, 22:10 (75 jours 11 heures)</td></tr><tr><td valign="top"><img src="https://studium.umontreal.ca/theme/image.php/cleanudem/wiki/1493288552/icon" class="icon" alt="Wiki"></td><td valign="top" style="width:300">   <a title="Wiki" href="/wiki/view.php?id=1429807">Laboratoire vs projet</a></td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top">16 vues</td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top" style="white-space: nowrap">lundi 13 février 2017, 17:36 (78 jours 16 heures)</td></tr><tr><td valign="top"><img src="https://studium.umontreal.ca/theme/image.php/cleanudem/wiki/1493288552/icon" class="icon" alt="Wiki"></td><td valign="top" style="width:300">   <a title="Wiki" href="/wiki/view.php?id=1429811">Recherche guidée vs l'enseignement par les pairs</a></td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top">212 vues</td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top" style="white-space: nowrap">lundi 20 février 2017, 14:25 (71 jours 19 heures)</td></tr><tr><td valign="top"><img src="https://studium.umontreal.ca/theme/image.php/cleanudem/assign/1493288552/icon" class="icon" alt="Devoir"></td><td valign="top" style="width:300">   <a title="Devoir" href="/assign/view.php?id=1429813">Équipe et formules</a></td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top">Note&nbsp;: -</td><td>&nbsp;&nbsp;&nbsp;</td></tr></tbody></table></div></div><div class="section"><h2>6 février - 12 février</h2><div class="content"><table cellpadding="4" cellspacing="0"><tbody><tr><td valign="top"><img src="https://studium.umontreal.ca/theme/image.php/cleanudem/label/1493288552/icon" class="icon" alt="Étiquette"></td><td valign="top" style="width:300">   <a title="Étiquette" href="/label/view.php?id=1429814">Ressources utilisées en classeRetour sur la lectur...</a></td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top"><p style="text-align:center">-</p></td><td>&nbsp;&nbsp;&nbsp;</td></tr><tr><td valign="top"><img src="https://studium.umontreal.ca/theme/image.php/cleanudem/label/1493288552/icon" class="icon" alt="Étiquette"></td><td valign="top" style="width:300">   <a title="Étiquette" href="/label/view.php?id=1429816">Tp 2Directives</a></td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top"><p style="text-align:center">-</p></td><td>&nbsp;&nbsp;&nbsp;</td></tr></tbody></table></div></div><div class="section"><h2>13 février - 19 février</h2><div class="content"><table cellpadding="4" cellspacing="0"><tbody><tr><td valign="top"><img src="https://studium.umontreal.ca/theme/image.php/cleanudem/forum/1493288552/icon" class="icon" alt="Forum"></td><td valign="top" style="width:300">   <a title="Forum" href="/forum/view.php?id=1429824">Séminaire sur les formules pédagogiques</a></td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top">9 messages</td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top" style="white-space: nowrap">vendredi 17 février 2017, 16:45 (74 jours 17 heures)</td></tr><tr><td valign="top"><img src="https://studium.umontreal.ca/theme/image.php/cleanudem/choice/1493288552/icon" class="icon" alt="Sondage"></td><td valign="top" style="width:300">   <a title="Sondage" href="/choice/view.php?id=1429828">Pour le tp 3, êtes-vous consentant(e) de continuer à travailler au sein de la même équipe?</a></td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top">'Je pourrais toujours même si...'</td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top" style="white-space: nowrap">lundi 13 février 2017, 16:49 (78 jours 17 heures)</td></tr></tbody></table></div></div><div class="section"><h2>20 février - 26 février</h2><div class="content"><table cellpadding="4" cellspacing="0"><tbody><tr><td valign="top"><img src="https://studium.umontreal.ca/theme/image.php/cleanudem/label/1493288552/icon" class="icon" alt="Étiquette"></td><td valign="top" style="width:300">   <a title="Étiquette" href="/label/view.php?id=1429829">Remise des tp 1 et tp 2:Tp 1: &nbsp;Aucune remise ...</a></td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top"><p style="text-align:center">-</p></td><td>&nbsp;&nbsp;&nbsp;</td></tr><tr><td valign="top"><img src="https://studium.umontreal.ca/theme/image.php/cleanudem/assign/1493288552/icon" class="icon" alt="Devoir"></td><td valign="top" style="width:300">   <a title="Devoir" href="/assign/view.php?id=1429830">Remise du devoir (tp2)</a></td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top">Note&nbsp;: C+</td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top" style="white-space: nowrap">samedi 8 avril 2017, 16:57 (24 jours 18 heures)</td></tr><tr><td valign="top"><img src="https://studium.umontreal.ca/theme/image.php/cleanudem/assign/1493288552/icon" class="icon" alt="Devoir"></td><td valign="top" style="width:300">   <a title="Devoir" href="/assign/view.php?id=1429831">Remise de la grille d'auto-évaluation de sa contribution au travail en équipe tp1</a></td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top">Note&nbsp;: -</td><td>&nbsp;&nbsp;&nbsp;</td></tr><tr><td valign="top"><img src="https://studium.umontreal.ca/theme/image.php/cleanudem/label/1493288552/icon" class="icon" alt="Étiquette"></td><td valign="top" style="width:300">   <a title="Étiquette" href="/label/view.php?id=1429832">&nbsp;Tp3&nbsp;
+Directives du tp&nbsp;3
+Grille d...</a></td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top"><p style="text-align:center">-</p></td><td>&nbsp;&nbsp;&nbsp;</td></tr><tr><td valign="top"><img src="https://studium.umontreal.ca/theme/image.php/cleanudem/assign/1493288552/icon" class="icon" alt="Devoir"></td><td valign="top" style="width:300">   <a title="Devoir" href="/assign/view.php?id=1506941">Équipe et REA</a></td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top">Note&nbsp;: -</td><td>&nbsp;&nbsp;&nbsp;</td></tr></tbody></table></div></div><div class="section"><h2>Du 27 février au 13 mars</h2><div class="content"><table cellpadding="4" cellspacing="0"><tbody><tr><td valign="top"><img src="https://studium.umontreal.ca/theme/image.php/cleanudem/label/1493288552/icon" class="icon" alt="Étiquette"></td><td valign="top" style="width:300">   <a title="Étiquette" href="/label/view.php?id=1429852">Hors classe
+1. Continuer le tp 3
+2. Visionner le...</a></td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top"><p style="text-align:center">-</p></td><td>&nbsp;&nbsp;&nbsp;</td></tr></tbody></table></div></div><div class="section"><h2>13 au 20 mars</h2><div class="content"><table cellpadding="4" cellspacing="0"><tbody><tr><td valign="top"><img src="https://studium.umontreal.ca/theme/image.php/cleanudem/page/1493288552/icon" class="icon" alt="Page"></td><td valign="top" style="width:300">   <a title="Page" href="/page/view.php?id=1429834">Définition de REA</a></td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top">1 vues</td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top" style="white-space: nowrap">dimanche 26 mars 2017, 20:26 (37 jours 14 heures)</td></tr><tr><td valign="top"><img src="https://studium.umontreal.ca/theme/image.php/cleanudem/label/1493288552/icon" class="icon" alt="Étiquette"></td><td valign="top" style="width:300">   <a title="Étiquette" href="/label/view.php?id=1429835">
+
+Outils de présentation</a></td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top"><p style="text-align:center">-</p></td><td>&nbsp;&nbsp;&nbsp;</td></tr><tr><td valign="top"><img src="https://studium.umontreal.ca/theme/image.php/cleanudem/url/1493288552/icon" class="icon" alt="URL"></td><td valign="top" style="width:300">   <a title="URL" href="/url/view.php?id=1429836">Tutoriel en français sur Prezi</a></td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top"><p style="text-align:center">-</p></td><td>&nbsp;&nbsp;&nbsp;</td></tr><tr><td valign="top"><img src="https://studium.umontreal.ca/theme/image.php/cleanudem/url/1493288552/icon" class="icon" alt="URL"></td><td valign="top" style="width:300">   <a title="URL" href="/url/view.php?id=1429837">Présentation de Prezi</a></td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top"><p style="text-align:center">-</p></td><td>&nbsp;&nbsp;&nbsp;</td></tr><tr><td valign="top"><img src="https://studium.umontreal.ca/theme/image.php/cleanudem/resource/1493288552/icon" class="icon" alt="Fichier"></td><td valign="top" style="width:300">   <a title="Fichier" href="/resource/view.php?id=1429838">Guide d'utilisation d'une présentation multimédia</a></td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top">1 vues</td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top" style="white-space: nowrap">lundi 20 mars 2017, 12:52 (43 jours 22 heures)</td></tr></tbody></table></div></div><div class="section"><h2>20 au 27 mars</h2><div class="content"><table cellpadding="4" cellspacing="0"><tbody><tr><td valign="top"><img src="https://studium.umontreal.ca/theme/image.php/cleanudem/url/1493288552/icon" class="icon" alt="URL"></td><td valign="top" style="width:300">   <a title="URL" href="/url/view.php?id=1429871">Texte de Viau sur la motivation</a></td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top">1 vues</td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top" style="white-space: nowrap">dimanche 26 mars 2017, 20:27 (37 jours 14 heures)</td></tr></tbody></table></div></div><div class="section"><h2>27 mars</h2><div class="content"><table cellpadding="4" cellspacing="0"><tbody><tr><td valign="top"><img src="https://studium.umontreal.ca/theme/image.php/cleanudem/label/1493288552/icon" class="icon" alt="Étiquette"></td><td valign="top" style="width:300">   <a title="Étiquette" href="/label/view.php?id=1429854">Remise du tp 3: 27 mars 13h00Équipe&nbsp;:
+
+Scén...</a></td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top"><p style="text-align:center">-</p></td><td>&nbsp;&nbsp;&nbsp;</td></tr><tr><td valign="top"><img src="https://studium.umontreal.ca/theme/image.php/cleanudem/assign/1493288552/icon" class="icon" alt="Devoir"></td><td valign="top" style="width:300">   <a title="Devoir" href="/assign/view.php?id=1429855">Remise des 5 questions de l'"annexe 1</a></td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top">Note&nbsp;: -</td><td>&nbsp;&nbsp;&nbsp;</td></tr><tr><td valign="top"><img src="https://studium.umontreal.ca/theme/image.php/cleanudem/resource/1493288552/icon" class="icon" alt="Fichier"></td><td valign="top" style="width:300">   <a title="Fichier" href="/resource/view.php?id=1429856">Grille de l'évaluation de sa contribution au travail en équipe pour le tp 3 </a></td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top">3 vues</td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top" style="white-space: nowrap">vendredi 7 avril 2017, 22:04 (25 jours 13 heures)</td></tr><tr><td valign="top"><img src="https://studium.umontreal.ca/theme/image.php/cleanudem/assign/1493288552/icon" class="icon" alt="Devoir"></td><td valign="top" style="width:300">   <a title="Devoir" href="/assign/view.php?id=1429857">Remise de la grille complétée de l'évaluation de sa contribution au travail en équipe pour le tp 3</a></td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top">Note&nbsp;: A</td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top" style="white-space: nowrap">samedi 8 avril 2017, 16:35 (24 jours 18 heures)</td></tr><tr><td valign="top"><img src="https://studium.umontreal.ca/theme/image.php/cleanudem/label/1493288552/icon" class="icon" alt="Étiquette"></td><td valign="top" style="width:300">   <a title="Étiquette" href="/label/view.php?id=1429867">Travail en équipe</a></td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top"><p style="text-align:center">-</p></td><td>&nbsp;&nbsp;&nbsp;</td></tr><tr><td valign="top"><img src="https://studium.umontreal.ca/theme/image.php/cleanudem/resource/1493288552/icon" class="icon" alt="Fichier"></td><td valign="top" style="width:300">   <a title="Fichier" href="/resource/view.php?id=1429868">Exemples de grilles d'évaluation de travail en équipe</a></td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top">1 vues</td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top" style="white-space: nowrap">lundi 27 mars 2017, 14:13 (36 jours 20 heures)</td></tr><tr><td valign="top"><img src="https://studium.umontreal.ca/theme/image.php/cleanudem/resource/1493288552/icon" class="icon" alt="Fichier"></td><td valign="top" style="width:300">   <a title="Fichier" href="/resource/view.php?id=1429870">Schéma des concepts du travail en équipe de Proulx</a></td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top">1 vues</td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top" style="white-space: nowrap">lundi 27 mars 2017, 13:56 (36 jours 21 heures)</td></tr><tr><td valign="top"><img src="https://studium.umontreal.ca/theme/image.php/cleanudem/quiz/1493288552/icon" class="icon" alt="Test"></td><td valign="top" style="width:300">   <a title="Test" href="/quiz/view.php?id=1429869">Test sur Le Travail d'équipe de Jean Proulx</a></td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top">Note: -</td><td>&nbsp;&nbsp;&nbsp;</td></tr><tr><td valign="top"><img src="https://studium.umontreal.ca/theme/image.php/cleanudem/resource/1493288552/icon" class="icon" alt="Fichier"></td><td valign="top" style="width:300">   <a title="Fichier" href="/resource/view.php?id=1429861">Directives du tp 4</a></td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top">3 vues</td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top" style="white-space: nowrap">vendredi 28 avril 2017, 15:48 (4 jours 19 heures)</td></tr></tbody></table></div></div><div class="section"><h2>27 mars - 2 avril</h2><div class="content"><table cellpadding="4" cellspacing="0"><tbody><tr><td valign="top"><img src="https://studium.umontreal.ca/theme/image.php/cleanudem/book/1493288552/icon" class="icon" alt="Livre"></td><td valign="top" style="width:300">   <a title="Livre" href="/book/view.php?id=1429906">Livre: Initiation à la capture d'écran avec Jing</a></td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top">5 vues</td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top" style="white-space: nowrap">lundi 27 mars 2017, 15:08 (36 jours 20 heures)</td></tr><tr><td valign="top"><img src="https://studium.umontreal.ca/theme/image.php/cleanudem/url/1493288552/icon" class="icon" alt="URL"></td><td valign="top" style="width:300">   <a title="URL" href="/url/view.php?id=1530841">Tutoriel Audacity</a></td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top"><p style="text-align:center">-</p></td><td>&nbsp;&nbsp;&nbsp;</td></tr><tr><td valign="top"><img src="https://studium.umontreal.ca/theme/image.php/cleanudem/url/1493288552/icon" class="icon" alt="URL"></td><td valign="top" style="width:300">   <a title="URL" href="/url/view.php?id=1429878">Tutoriel - Utiliser Knovio pour narrer des diaporamas</a></td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top"><p style="text-align:center">-</p></td><td>&nbsp;&nbsp;&nbsp;</td></tr><tr><td valign="top"><img src="https://studium.umontreal.ca/theme/image.php/cleanudem/label/1493288552/icon" class="icon" alt="Étiquette"></td><td valign="top" style="width:300">   <a title="Étiquette" href="/label/view.php?id=1429873">Démonstration en classe : accéder au compte Studiu...</a></td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top"><p style="text-align:center">-</p></td><td>&nbsp;&nbsp;&nbsp;</td></tr><tr><td valign="top"><img src="https://studium.umontreal.ca/theme/image.php/cleanudem/resource/1493288552/icon" class="icon" alt="Fichier"></td><td valign="top" style="width:300">   <a title="Fichier" href="/resource/view.php?id=1531006">Gabarit d'une vidéo pédagogique</a></td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top">1 vues</td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top" style="white-space: nowrap">lundi 24 avril 2017, 10:10 (9 jours)</td></tr><tr><td valign="top"><img src="https://studium.umontreal.ca/theme/image.php/cleanudem/resource/1493288552/icon" class="icon" alt="Fichier"></td><td valign="top" style="width:300">   <a title="Fichier" href="/resource/view.php?id=1537437">Atelier Balado</a></td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top"><p style="text-align:center">-</p></td><td>&nbsp;&nbsp;&nbsp;</td></tr></tbody></table></div></div><div class="section"><h2>24 avril</h2><div class="content"><table cellpadding="4" cellspacing="0"><tbody><tr><td valign="top"><img src="https://studium.umontreal.ca/theme/image.php/cleanudem/label/1493288552/icon" class="icon" alt="Étiquette"></td><td valign="top" style="width:300">   <a title="Étiquette" href="/label/view.php?id=1550580">Déroulement du cours1. Présentation des baladodiff...</a></td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top"><p style="text-align:center">-</p></td><td>&nbsp;&nbsp;&nbsp;</td></tr><tr><td valign="top"><img src="https://studium.umontreal.ca/theme/image.php/cleanudem/label/1493288552/icon" class="icon" alt="Étiquette"></td><td valign="top" style="width:300">   <a title="Étiquette" href="/label/view.php?id=1429893">
+
+Remise du TP 4&nbsp;
+
+1. REA&nbsp;:&nbsp;
+d...</a></td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top"><p style="text-align:center">-</p></td><td>&nbsp;&nbsp;&nbsp;</td></tr><tr><td valign="top"><img src="https://studium.umontreal.ca/theme/image.php/cleanudem/assign/1493288552/icon" class="icon" alt="Devoir"></td><td valign="top" style="width:300">   <a title="Devoir" href="/assign/view.php?id=1429894">Remise des réponses aux questions de l'annexe 1 du tp 4</a></td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top">Note&nbsp;: -</td><td>&nbsp;&nbsp;&nbsp;</td></tr><tr><td valign="top"><img src="https://studium.umontreal.ca/theme/image.php/cleanudem/label/1493288552/icon" class="icon" alt="Étiquette"></td><td valign="top" style="width:300">   <a title="Étiquette" href="/label/view.php?id=1552249">Conclusion</a></td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top"><p style="text-align:center">-</p></td><td>&nbsp;&nbsp;&nbsp;</td></tr><tr><td valign="top"><img src="https://studium.umontreal.ca/theme/image.php/cleanudem/url/1493288552/icon" class="icon" alt="URL"></td><td valign="top" style="width:300">   <a title="URL" href="/url/view.php?id=1429889">Formation en ligne en Sciences infirmières</a></td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top"><p style="text-align:center">-</p></td><td>&nbsp;&nbsp;&nbsp;</td></tr><tr><td valign="top"><img src="https://studium.umontreal.ca/theme/image.php/cleanudem/url/1493288552/icon" class="icon" alt="URL"></td><td valign="top" style="width:300">   <a title="URL" href="/url/view.php?id=1429890">Le rap des participes passés</a></td><td>&nbsp;&nbsp;&nbsp;</td><td valign="top"><p style="text-align:center">-</p></td><td>&nbsp;&nbsp;&nbsp;</td></tr></tbody></table></div></div>
+        </div>
+ 
+        <div id="tab2" class="tab">
+           <div class="section" id="yui_3_17_2_1_1493824167991_375"><h2>Message</h2><div class="content" id="yui_3_17_2_1_1493824167991_374"><h4 id="yui_3_17_2_1_1493824167991_373"><img class="icon" alt="Forum" title="Forum" src="https://studium.umontreal.ca/theme/image.php/cleanudem/mod_forum/1493288552/icon"> Forum: <a href="/forum/view.php?id=1429771">Nouvelles</a></h4><ul><p>Aucun message</p></ul><h4><img class="icon" alt="Fichier" title="Fichier" src="https://studium.umontreal.ca/theme/image.php/cleanudem/mod_resource/1493288552/icon"> Fichier: <a href="/resource/view.php?id=1429772">Plan de cours</a></h4><ul>10 vues - le plus récemment lundi 13 mars 2017, 11:19</ul><h4><img class="icon" alt="Fichier" title="Fichier" src="https://studium.umontreal.ca/theme/image.php/cleanudem/mod_resource/1493288552/icon"> Fichier: <a href="/resource/view.php?id=1429773">Référentiel</a></h4><ul>1 vues - le plus récemment lundi 23 janvier 2017, 11:12</ul><h4><img class="icon" alt="Étiquette" title="Étiquette" src="https://studium.umontreal.ca/theme/image.php/cleanudem/mod_label/1493288552/icon"> Étiquette: <a href="/label/view.php?id=1429774">Espace de télécollaboration</a></h4><ul>Jamais consulté</ul><h4><img class="icon" alt="Forum" title="Forum" src="https://studium.umontreal.ca/theme/image.php/cleanudem/mod_forum/1493288552/icon"> Forum: <a href="/forum/view.php?id=1429775">Forum du cours</a></h4><ul><p>Aucun message</p></ul><h4><img class="icon" alt="Forum" title="Forum" src="https://studium.umontreal.ca/theme/image.php/cleanudem/mod_forum/1493288552/icon"> Forum: <a href="/forum/view.php?id=1429777">Offres d'emploi</a></h4><ul><p>Aucun message</p></ul><h4><img class="icon" alt="Chat" title="Chat" src="https://studium.umontreal.ca/theme/image.php/cleanudem/mod_chat/1493288552/icon"> Chat: <a href="/chat/view.php?id=1429778">Salle de clavardage</a></h4><ul>Jamais consulté</ul><h4><img class="icon" alt="Chat" title="Chat" src="https://studium.umontreal.ca/theme/image.php/cleanudem/mod_chat/1493288552/icon"> Chat: <a href="/chat/view.php?id=1429779">Salle de clavardage</a></h4><ul>Jamais consulté</ul></div></div>
+        </div>
+ 
+        <div id="tab3" class="tab">
+			<div class="chart-image" role="presentation" ><img src="src/graphe.png"></div>
+            <table class="generaltable">
+<thead>
+<tr>
+<th class="header c0" style="text-align:left;" scope="col">Fin de la période (Mois)</th>
+<th class="header c1" style="text-align:center;" scope="col">Consultations</th>
+<th class="header c2" style="text-align:center;" scope="col">Messages</th>
+<th class="header c3 lastcol" style="text-align:center;" scope="col">Toutes activités</th>
+</tr>
+</thead>
+<tbody><tr class="">
+<td class="cell c0" style="text-align:left;">1 mai 2017</td>
+<td class="cell c1" style="text-align:center;">26</td>
+<td class="cell c2" style="text-align:center;">11</td>
+<td class="cell c3 lastcol" style="text-align:center;">37</td>
+</tr>
+<tr class="">
+<td class="cell c0" style="text-align:left;">1 avril 2017</td>
+<td class="cell c1" style="text-align:center;">107</td>
+<td class="cell c2" style="text-align:center;">9</td>
+<td class="cell c3 lastcol" style="text-align:center;">116</td>
+</tr>
+<tr class="">
+<td class="cell c0" style="text-align:left;">1 mars 2017</td>
+<td class="cell c1" style="text-align:center;">487</td>
+<td class="cell c2" style="text-align:center;">113</td>
+<td class="cell c3 lastcol" style="text-align:center;">600</td>
+</tr>
+<tr class="lastrow">
+<td class="cell c0" style="text-align:left;">1 février 2017</td>
+<td class="cell c1" style="text-align:center;">35</td>
+<td class="cell c2" style="text-align:center;">3</td>
+<td class="cell c3 lastcol" style="text-align:center;">38</td>
+</tr>
+</tbody>
+</table>
+        </div>
+ 
+        <div id="tab4" class="tab">
+            <div class="chart-image" role="presentation" ><img src="src/graphe2.png"></div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+    </div>
+</div></div>        </section>    
+            </div>
+        </div>
+        <aside id="block-region-side-post" class="span3 pull-right block-region" data-blockregion="side-post" data-droptarget="1"></aside>    </div>
+
+    
+<footer id="page-footer">
+    <div class="footer-nav"><div class="container-fluid">
+<div class="row-fluid">
+<div class="span3">
+<ul>
+<li><a href="http://localhost/moodle/?redirect=0" class="primary">StudiUM</a></li>
+<li><a href="http://localhost/moodle/my">Mon StudiUM</a></li>
+<li><a href="http://localhost/moodle/calendar/view.php">Calendrier</a></li>
+<li><a href="http://localhost/moodle/course">Liste des cours</a></li>
+<li><a href="https://wiki.umontreal.ca/pages/viewpage.action?pageId=92832284" target="_blank">À propos</a></li>
+</ul>
+</div>
+<div class="span3 enseignant">
+<ul>
+<li><a target="_blank" href="https://wiki.umontreal.ca/display/StudiUMDocs/Enseignants" class="primary">Enseignants</a></li>
+<li><a target="_blank" href="https://wiki.umontreal.ca/x/rQMGBg">Découvrir StudiUM</a></li>
+<li><a target="_blank" href="https://wiki.umontreal.ca/x/fYKIBQ">Comment accéder à StudiUM</a></li>
+<li><a target="_blank" href="https://wiki.umontreal.ca/x/YYKIBQ">Gérer ses préférences, ses messages et son calendrier</a></li>
+<li><a target="_blank" href="https://wiki.umontreal.ca/x/wYKIBQ">Créer et conﬁgurer un site de cours</a></li>
+<li><a target="_blank" href="https://wiki.umontreal.ca/x/RIKIBQ">Ajouter des ressources et des activités</a></li>
+<li><a target="_blank" href="https://wiki.umontreal.ca/x/yYGIBQ">Paramétrer le carnet de notes</a></li>
+<li><a target="_blank" href="https://wiki.umontreal.ca/x/E4KIBQ">Se former</a></li>
+<li><a target="_blank" href="https://wiki.umontreal.ca/x/hYGIBQ">Besoin d’aide ?</a></li>
+</ul>
+</div>
+<div class="span3 etudiant">
+<ul>
+<li><a target="_blank" href="https://wiki.umontreal.ca/pages/viewpage.action?pageId=92832271" class="primary">Étudiants</a></li>
+<li><a target="_blank" href="https://wiki.umontreal.ca/pages/viewpage.action?pageId=101058888">Guide de démarrage pour les étudiants</a></li>
+<li><a target="_blank" href="https://wiki.umontreal.ca/pages/viewpage.action?pageId=92832360">Comment accéder à StudiUM</a></li>
+<li><a target="_blank" href="https://wiki.umontreal.ca/pages/viewpage.action?pageId=92832376">Gérer ses préférences, ses messages et son calendrier</a></li>
+<li><a target="_blank" href="https://wiki.umontreal.ca/pages/viewpage.action?pageId=92832386">Étudier à l’aide d’activités et de ressources</a></li>
+<li><a target="_blank" href="https://wiki.umontreal.ca/pages/viewpage.action?pageId=92832120">Consulter son carnet de notes</a></li>
+<li><a target="_blank" href="https://wiki.umontreal.ca/pages/viewpage.action?pageId=92832259">Besoin d’aide ?</a></li>
+</ul>
+</div>
+<div class="span3">
+<ul>
+<li><a target="_blank" href="http://www.umontreal.ca/" style="text-transform: none;" class="primary">UdeM</a></li>
+<li><a target="_blank" href="https://identification.umontreal.ca/cas/login.ashx?service=http%3A%2F%2Fwww.portail.umontreal.ca%2F&amp;nc=1392044673.9235">Mon portail UdeM</a></li>
+<li><a target="_blank" href="https://outlook.umontreal.ca/">Mon courriel</a></li>
+<li><a target="_blank" href="http://www.umontreal.ca/repertoires/facultes.html">Facultés</a></li>
+<li><a target="_blank" href="http://www.bib.umontreal.ca/">Bibliothèques</a></li>
+<li><a target="_blank" href="http://plancampus.umontreal.ca/">Plan campus</a></li>
+</ul>
+</div>
+</div>
+</div></div>    <div class="footer-info">
+        <div id="course-footer"></div>
+        <p class="helplink"><a href="http://docs.moodle.org/32/fr/mod/workshop/view" class="helplinkpopup"><img class="iconhelp icon-pre" role="presentation" alt="" src="src/docs.svg">Documentation Moodle pour cette page</a></p>
+                <div class="logininfo">Connecté sous le nom «&nbsp;<a href="http://localhost/moodle/user/profile.php?id=128601" title="Consulter le profil">Issam Taboubi</a>&nbsp;» (<a href="http://localhost/moodle/login/logout.php?sesskey=42mMi0rz4B">Déconnexion</a>)</div>        <div class="homelink"><a href="http://localhost/moodle/course/view.php?id=27727">cours-atelier</a></div>        <div class="purgecaches"><a href="http://localhost/moodle/admin/purgecaches.php?confirm=1&amp;sesskey=42mMi0rz4B&amp;returnurl=%2Fmod%2Fworkshop%2Fview.php%3Fid%3D77458">Vider tous les caches</a></div>                <p class="serverinfo">Serveur: localhost</p>
+    </div>
+</footer>
+
+</div>
+<script type="text/javascript">
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function demo(infouser,infocours,next,previous) {
+  await sleep(800);
+  $("#spinerprofile").toggle();
+  $(".infocoursselected").text(infocours.name);
+  $("#plan-user-info .profile_img").attr("src", infouser.image);
+  $("#plan-user-info .user-name .truncate .infouser").text(infouser.name);
+  if (previous == null) {
+	$(".prevplan").hide();
+  } else {
+	$(".prevplan").data("userid", previous.id);
+	$(".prevplan p").html(previous.name);
+	$(".prevplan img").attr("src", previous.smallimage);
+	$(".prevplan").show();
+	
+  }
+  if (next == null) {
+	$(".nexplan").hide();
+  } else {
+	$(".nexplan").data("userid", next.id);
+	$(".nexplan p").html(next.name);
+	$(".nexplan img").attr("src", next.smallimage);
+	$(".nexplan").show();
+  }
+  $(".tabs").show();
+  
+}
+
+function selectuserinfo(idcourse,iduser) {
+var infocours = null;
+$("#userInfoContainer").show();
+$(".tabs").hide();
+$("#spinerprofile").toggle();
+$.each(listcours, function( index, value ) {
+  if (value.id == idcourse) {
+	infocours = value;
+  }
+});
+var infouser = null;
+var infouserindex = 0;
+$.each(listusers, function( index, value ) {
+  if (value.id == iduser) {
+	infouser = value;
+	infouserindex = index;
+  }
+});
+var previous = null;
+var next = null;
+if (infouserindex == 0) {
+	previous = null;
+	next = listusers[1];
+} else if (infouserindex == 2) {
+	next = null;
+	previous = listusers[infouserindex - 1];
+} else {
+	previous = listusers[infouserindex - 1];
+	next = listusers[infouserindex + 1];
+}
+
+demo(infouser,infocours,next,previous);
+}
+
+var listusers = [
+{
+	"id":1,
+	"name": "User2 Test2",
+	"smallname" : "user2test2",
+	"image" : "http://www.gravatar.com/avatar/00000000000000000000000000000000?s=100",
+	"smallimage" : "http://www.gravatar.com/avatar/00000000000000000000000000000000?s=35"
+},
+{
+	"id" : 2,
+	"name": "Issam Taboubi",
+	"smallname" : "taboubii",
+	"image" : "http://www.gravatar.com/avatar/9e05c3b877bf078bbfc01ca4c46a906f?s=100&amp;d=mm",
+	"smallimage" : "http://www.gravatar.com/avatar/9e05c3b877bf078bbfc01ca4c46a906f?s=35&amp;d=mm"
+},
+{
+	"id":3,
+	"name": "User1 Test1",
+	"smallname" : "user1test1",
+	"image" : "http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=100&amp;d=mm",
+	"smallimage" : "http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=35&amp;d=mm"
+}
+];
+var listcours = [{
+	"id" : 1,
+	"name": "Cours 1",
+},
+{
+	"id":2,
+	"name": "Cours 2",
+},
+{
+	"id":3,
+	"name": "Cours 3",
+}];
+$('.scalefiltercontainer input').on('change', function(){
+	if ($("#notereceived").is(':checked')) {
+        $('.c4, .givengrade').show();
+		$('.c2, .receivedgrade').hide();
+	}
+	if ($("#notegiven").is(':checked')) {
+		$('.c2, .receivedgrade').show();
+		$('.c4, .givengrade').hide();
+	}
+});
+$('#id_calcul').on('change', function() {
+	if ($( "#id_calcul option:selected" ).val() != 1) {
+		$('.coefficient').hide();
+	} else {
+		$('.coefficient').show();
+	}
+});
+$("#arrow_cours").on('click', function(){
+	$("#list_cours").toggle();
+});
+$("#list_cours li").on('click', function(el){
+var user = $(this).html();
+$("#coursselected").val($(this).data('value')).trigger('change');
+var spanselect ='<span role="listitem" data-value="3" aria-selected="true" class="label label-info">'+ user +'</span>';
+$("#cours_selection .label-info").remove();
+$("#cours_selection .no-selection").hide();
+$("#cours_selection").append(spanselect);
+	$("#list_cours").toggle();
+});
+$("#arrow_users").on('click', function(){
+	$("#list_users").toggle();
+});
+$("#list_users li").on('click', function(el){
+var user = $(this).html();
+$("#userselected").val($(this).data('value')).trigger('change');
+var spanselect ='<span role="listitem" data-value="3" aria-selected="true" class="label label-info">'+ user +'</span>';
+$("#user_selection .label-info").remove();
+$("#user_selection .no-selection").hide();
+$("#user_selection").append(spanselect);
+	$("#list_users").toggle();
+});
+$("#userselected").on('change', function(){
+	if ($("#userselected").val() != '' && $("#coursselected").val() != '') {
+		$("#submitFilterReportButton").removeAttr("disabled");
+	} else {
+		alert('nope');
+		$("#submitFilterReportButton").attr("disabled", true);
+	}
+});
+$("#coursselected").on('change', function(){
+	if ($("#userselected").val() != '' && $("#coursselected").val() != '') {
+		$("#submitFilterReportButton").removeAttr("disabled");
+	} else {
+		$("#submitFilterReportButton").attr("disabled", true);
+	}
+});
+
+$("#reportFilter").on("submit", function(){
+var idcourse = $("#coursselected").val();
+var iduser = $("#userselected").val();
+selectuserinfo(idcourse,iduser);
+return false;
+});
+
+$(".navigatetoplan").on("click", function(){
+var idcourse = $("#coursselected").val();
+var iduser = $(this).data('userid');
+selectuserinfo(idcourse,iduser);
+return false;
+});
+
+jQuery(document).ready(function() {
+    jQuery('.tabs .tab-links a').on('click', function(e)  {
+        var currentAttrValue = jQuery(this).attr('href');
+ 
+        // Show/Hide Tabs
+		jQuery('.tabs ' + currentAttrValue).slideDown(400).siblings().slideUp(400);
+ 
+        // Change/remove current tab to active
+        jQuery(this).parent('li').addClass('active').siblings().removeClass('active');
+ 
+        e.preventDefault();
+    });
+});
+
+</script>
+
+</body></html>
